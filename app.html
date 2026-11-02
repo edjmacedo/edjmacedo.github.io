@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Word Playground</title>
+    <!-- The link at the end of results shared from the app (SHARE_URL in mobile/src/config.ts).
+         Android phones go straight to the app on Google Play; other devices see the home page.
+         Chats show the card below, since they read these tags without running the script. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Word Playground" />
+    <meta property="og:title" content="Word Playground" />
+    <meta
+      property="og:description"
+      content="Daily word games · Jogos de palavras do dia · Dagliga ordspel"
+    />
+    <meta property="og:url" content="https://edjmacedo.github.io/app" />
+    <meta property="og:image" content="https://edjmacedo.github.io/share.jpg" />
+    <meta property="og:image:width" content="1024" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:image:alt" content="Word Playground: four word games every day" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="icon.png" />
+    <script>
+      // Set to true once the app is live on Google Play. Until then only testers can open its
+      // page there (everyone else gets "not found"), so everyone goes to the home page.
+      var LIVE_ON_GOOGLE_PLAY = false;
+      // The referrer shows in the Play Console's acquisition reports as the "shared_result"
+      // source, counting the visits and installs that shared results bring.
+      var GOOGLE_PLAY =
+        'https://play.google.com/store/apps/details?id=com.edjmacedo.wordsplayground' +
+        '&referrer=utm_source%3Dshared_result%26utm_campaign%3Dshare';
+      var android = /Android/i.test(navigator.userAgent);
+      location.replace(LIVE_ON_GOOGLE_PLAY && android ? GOOGLE_PLAY : '/');
+    </script>
+  </head>
+  <body>
+    <p><a href="/">Word Playground</a></p>
+  </body>
+</html>
